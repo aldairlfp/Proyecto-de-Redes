@@ -1,0 +1,24 @@
+D:\School\Tercer Anno\Redes\Proyecto\PhysicalLayer\bin\Debug\net6.0\PhysicalLayer.deps.json
+D:\School\Tercer Anno\Redes\Proyecto\PhysicalLayer\bin\Debug\net6.0\PhysicalLayer.dll
+D:\School\Tercer Anno\Redes\Proyecto\PhysicalLayer\bin\Debug\net6.0\ref\PhysicalLayer.dll
+D:\School\Tercer Anno\Redes\Proyecto\PhysicalLayer\bin\Debug\net6.0\PhysicalLayer.pdb
+D:\School\Tercer Anno\Redes\Proyecto\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.csproj.AssemblyReference.cache
+D:\School\Tercer Anno\Redes\Proyecto\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\School\Tercer Anno\Redes\Proyecto\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.AssemblyInfoInputs.cache
+D:\School\Tercer Anno\Redes\Proyecto\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.AssemblyInfo.cs
+D:\School\Tercer Anno\Redes\Proyecto\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.csproj.CoreCompileInputs.cache
+D:\School\Tercer Anno\Redes\Proyecto\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.dll
+D:\School\Tercer Anno\Redes\Proyecto\PhysicalLayer\obj\Debug\net6.0\ref\PhysicalLayer.dll
+D:\School\Tercer Anno\Redes\Proyecto\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.pdb
+D:\School\Tercer Anno\Redes\Proyecto de Redes\PhysicalLayer\bin\Debug\net6.0\PhysicalLayer.deps.json
+D:\School\Tercer Anno\Redes\Proyecto de Redes\PhysicalLayer\bin\Debug\net6.0\PhysicalLayer.dll
+D:\School\Tercer Anno\Redes\Proyecto de Redes\PhysicalLayer\bin\Debug\net6.0\ref\PhysicalLayer.dll
+D:\School\Tercer Anno\Redes\Proyecto de Redes\PhysicalLayer\bin\Debug\net6.0\PhysicalLayer.pdb
+D:\School\Tercer Anno\Redes\Proyecto de Redes\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.csproj.AssemblyReference.cache
+D:\School\Tercer Anno\Redes\Proyecto de Redes\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\School\Tercer Anno\Redes\Proyecto de Redes\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.AssemblyInfoInputs.cache
+D:\School\Tercer Anno\Redes\Proyecto de Redes\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.AssemblyInfo.cs
+D:\School\Tercer Anno\Redes\Proyecto de Redes\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.csproj.CoreCompileInputs.cache
+D:\School\Tercer Anno\Redes\Proyecto de Redes\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.dll
+D:\School\Tercer Anno\Redes\Proyecto de Redes\PhysicalLayer\obj\Debug\net6.0\ref\PhysicalLayer.dll
+D:\School\Tercer Anno\Redes\Proyecto de Redes\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.pdb
