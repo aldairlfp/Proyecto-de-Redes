@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\School\\Tercer Anno\\Redes\\Proyecto de Redes\\PhysicalLayer\\PhysicalLayer.csproj": {}
+    "/run/media/aldairlfp/Data/School/Tercer Año/Redes/Proyecto de Redes/PhysicalLayer/PhysicalLayer.csproj": {}
   },
   "projects": {
-    "D:\\School\\Tercer Anno\\Redes\\Proyecto de Redes\\PhysicalLayer\\PhysicalLayer.csproj": {
+    "/run/media/aldairlfp/Data/School/Tercer Año/Redes/Proyecto de Redes/PhysicalLayer/PhysicalLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\School\\Tercer Anno\\Redes\\Proyecto de Redes\\PhysicalLayer\\PhysicalLayer.csproj",
+        "projectUniqueName": "/run/media/aldairlfp/Data/School/Tercer Año/Redes/Proyecto de Redes/PhysicalLayer/PhysicalLayer.csproj",
         "projectName": "PhysicalLayer",
-        "projectPath": "D:\\School\\Tercer Anno\\Redes\\Proyecto de Redes\\PhysicalLayer\\PhysicalLayer.csproj",
-        "packagesPath": "C:\\Users\\Aldair\\.nuget\\packages\\",
-        "outputPath": "D:\\School\\Tercer Anno\\Redes\\Proyecto de Redes\\PhysicalLayer\\obj\\",
+        "projectPath": "/run/media/aldairlfp/Data/School/Tercer Año/Redes/Proyecto de Redes/PhysicalLayer/PhysicalLayer.csproj",
+        "packagesPath": "/home/aldairlfp/.nuget/packages/",
+        "outputPath": "/run/media/aldairlfp/Data/School/Tercer Año/Redes/Proyecto de Redes/PhysicalLayer/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Aldair\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/aldairlfp/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/aldairlfp/dotnet_6_and_5/sdk/6.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }
