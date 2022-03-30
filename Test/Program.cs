@@ -1,13 +1,16 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 StreamReader stream;
 
+System.Console.WriteLine(Environment.CurrentDirectory);
+
 try
 {
-    stream = new StreamReader("Test/bin/Debug/net6.0/config.txt");
-    System.Console.WriteLine(stream.ReadToEnd());
+    stream = new StreamReader("script.txt");
+    Console.WriteLine(stream.ReadToEnd());
 }
 catch (System.IO.FileNotFoundException)
 {
-    System.Console.WriteLine("No encontro el archivo");
+    Console.WriteLine("No encontro el archivo");
 }
