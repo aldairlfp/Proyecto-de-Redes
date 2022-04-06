@@ -1,7 +1,7 @@
 # Proyecto-de-Redes
 
 Para ejecutar el proyecto se debe tener instalado
- [dotnet>=6.0.101](https://dotnet.microsoft.com/en-us/download) abrir la carpeta desde una consola
+ [dotnet>=6.0.101](https://dotnet.microsoft.com/en-us/download). Abrir el directorio del proyecto desde una consola
 y ejecutar el siguiente comando:
 
 ```dotnet
