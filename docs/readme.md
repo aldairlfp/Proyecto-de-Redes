@@ -7,12 +7,15 @@
 
  Nota:
 
- El proyecto lo hice en ***C#*** (como lenguaje de programación) en ***Visual Studio 2019***
- de modo que para correrlo en Linux se puede usar mono ***mono***.
+ El proyecto lo hice en ***C#*** (como lenguaje de programación) en ***Visual Studio Code***.
 
 ### Como funciona el programa
 
-El Programa tiene varios parámetros fundamentales que esta en la clase *Program* como son el
+El proyecto se divide en una *ClassLibrary* en la cual esta toda la lógica de la capa física
+y un *ConsoleApplication* en la cual se probará todo lo referente a la lógica. La clase
+*Simulation* es una clase estática en la cual se ejecuta toda la simulación de la capa
+física
+El Programa tiene varios parámetros fundamentales que esta en la clase *Simulation* como son el
 *signal_time* y el tiempo máximo que va a correr el programa (para el programa la interpretación del tiempo es cada vez que pasa un
 ciclo del programa *ciclo principal del programa* es como si pasara 1 mili-segundo) Entonces los Host están representados por la
 clase Computadora , que esta en un fichero aparte de la solución , los Hubs por la clase Hub.
