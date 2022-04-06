@@ -74,7 +74,6 @@ namespace PhysicalLayer
         public void WriteOutput(string receive)
         {
             string completeRoute = Path.Join(OutputDirectory, Name + ".txt");
-            System.Console.WriteLine(completeRoute);
             //se crea el archivo si no existe y lo abre si ya existe 
             using (StreamWriter mylogs = File.AppendText(completeRoute))
             {
@@ -160,8 +159,6 @@ namespace PhysicalLayer
 
             while (output.Length > 1 && output[output.Length - 1] == '\n')
                 output.Remove(output.Length - 1, 1);
-
-            System.Console.WriteLine(output);
             WriteOutput(output.ToString());
 
             CleanInputParameters();
