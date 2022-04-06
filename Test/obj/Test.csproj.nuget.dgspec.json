@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\School\\Tercer Año\\Redes\\Proyecto de Redes\\Test\\Test.csproj": {}
+    "E:\\Nueva carpeta (2)\\Proyecto-de-Redes\\Test\\Test.csproj": {}
   },
   "projects": {
-    "D:\\School\\Tercer Año\\Redes\\Proyecto de Redes\\PhysicalLayer\\PhysicalLayer.csproj": {
+    "E:\\Nueva carpeta (2)\\Proyecto-de-Redes\\PhysicalLayer\\PhysicalLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\School\\Tercer Año\\Redes\\Proyecto de Redes\\PhysicalLayer\\PhysicalLayer.csproj",
+        "projectUniqueName": "E:\\Nueva carpeta (2)\\Proyecto-de-Redes\\PhysicalLayer\\PhysicalLayer.csproj",
         "projectName": "PhysicalLayer",
-        "projectPath": "D:\\School\\Tercer Año\\Redes\\Proyecto de Redes\\PhysicalLayer\\PhysicalLayer.csproj",
-        "packagesPath": "C:\\Users\\Aldair\\.nuget\\packages\\",
-        "outputPath": "D:\\School\\Tercer Año\\Redes\\Proyecto de Redes\\PhysicalLayer\\obj\\",
+        "projectPath": "E:\\Nueva carpeta (2)\\Proyecto-de-Redes\\PhysicalLayer\\PhysicalLayer.csproj",
+        "packagesPath": "C:\\Users\\Ramon\\.nuget\\packages\\",
+        "outputPath": "E:\\Nueva carpeta (2)\\Proyecto-de-Redes\\PhysicalLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Aldair\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Ramon\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -56,17 +56,17 @@
         }
       }
     },
-    "D:\\School\\Tercer Año\\Redes\\Proyecto de Redes\\Test\\Test.csproj": {
+    "E:\\Nueva carpeta (2)\\Proyecto-de-Redes\\Test\\Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\School\\Tercer Año\\Redes\\Proyecto de Redes\\Test\\Test.csproj",
+        "projectUniqueName": "E:\\Nueva carpeta (2)\\Proyecto-de-Redes\\Test\\Test.csproj",
         "projectName": "Test",
-        "projectPath": "D:\\School\\Tercer Año\\Redes\\Proyecto de Redes\\Test\\Test.csproj",
-        "packagesPath": "C:\\Users\\Aldair\\.nuget\\packages\\",
-        "outputPath": "D:\\School\\Tercer Año\\Redes\\Proyecto de Redes\\Test\\obj\\",
+        "projectPath": "E:\\Nueva carpeta (2)\\Proyecto-de-Redes\\Test\\Test.csproj",
+        "packagesPath": "C:\\Users\\Ramon\\.nuget\\packages\\",
+        "outputPath": "E:\\Nueva carpeta (2)\\Proyecto-de-Redes\\Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Aldair\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Ramon\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -78,8 +78,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\School\\Tercer Año\\Redes\\Proyecto de Redes\\PhysicalLayer\\PhysicalLayer.csproj": {
-                "projectPath": "D:\\School\\Tercer Año\\Redes\\Proyecto de Redes\\PhysicalLayer\\PhysicalLayer.csproj"
+              "E:\\Nueva carpeta (2)\\Proyecto-de-Redes\\PhysicalLayer\\PhysicalLayer.csproj": {
+                "projectPath": "E:\\Nueva carpeta (2)\\Proyecto-de-Redes\\PhysicalLayer\\PhysicalLayer.csproj"
               }
             }
           }

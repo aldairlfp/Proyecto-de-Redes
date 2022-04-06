@@ -46,3 +46,15 @@ D:\School\Tercer Año\Redes\Proyecto de Redes\PhysicalLayer\obj\Debug\net6.0\Phy
 D:\School\Tercer Año\Redes\Proyecto de Redes\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.dll
 D:\School\Tercer Año\Redes\Proyecto de Redes\PhysicalLayer\obj\Debug\net6.0\ref\PhysicalLayer.dll
 D:\School\Tercer Año\Redes\Proyecto de Redes\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.pdb
+E:\Nueva carpeta (2)\Proyecto-de-Redes\PhysicalLayer\bin\Debug\net6.0\PhysicalLayer.deps.json
+E:\Nueva carpeta (2)\Proyecto-de-Redes\PhysicalLayer\bin\Debug\net6.0\PhysicalLayer.dll
+E:\Nueva carpeta (2)\Proyecto-de-Redes\PhysicalLayer\bin\Debug\net6.0\ref\PhysicalLayer.dll
+E:\Nueva carpeta (2)\Proyecto-de-Redes\PhysicalLayer\bin\Debug\net6.0\PhysicalLayer.pdb
+E:\Nueva carpeta (2)\Proyecto-de-Redes\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.csproj.AssemblyReference.cache
+E:\Nueva carpeta (2)\Proyecto-de-Redes\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.GeneratedMSBuildEditorConfig.editorconfig
+E:\Nueva carpeta (2)\Proyecto-de-Redes\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.AssemblyInfoInputs.cache
+E:\Nueva carpeta (2)\Proyecto-de-Redes\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.AssemblyInfo.cs
+E:\Nueva carpeta (2)\Proyecto-de-Redes\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.csproj.CoreCompileInputs.cache
+E:\Nueva carpeta (2)\Proyecto-de-Redes\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.dll
+E:\Nueva carpeta (2)\Proyecto-de-Redes\PhysicalLayer\obj\Debug\net6.0\ref\PhysicalLayer.dll
+E:\Nueva carpeta (2)\Proyecto-de-Redes\PhysicalLayer\obj\Debug\net6.0\PhysicalLayer.pdb
