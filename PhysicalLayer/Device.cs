@@ -73,8 +73,9 @@ namespace PhysicalLayer
         // por esta clase , (nombredeldispositivo .txt)
         public void WriteOutput(string receive)
         {
+            System.Console.WriteLine("Llegue");
             string completeRoute = Path.Join(OutputDirectory, Name + ".txt");
-
+            System.Console.WriteLine(completeRoute);
             //se crea el archivo si no existe y lo abre si ya existe 
             using (StreamWriter mylogs = File.AppendText(completeRoute))
             {
@@ -90,8 +91,7 @@ namespace PhysicalLayer
             get
             {
                 var currentDirectory = Environment.CurrentDirectory;
-                var parent = Directory.GetParent(Directory.GetParent(Directory.GetParent(currentDirectory).FullName).FullName);
-                return Path.Join(parent.FullName, "output");
+                return Path.Join(currentDirectory, "output");
             }
         }
 
@@ -129,6 +129,7 @@ namespace PhysicalLayer
         // valores correspondientes 
         public virtual void ProcessOutputInput()
         {
+            System.Console.WriteLine("llegue");
             bool colision = TWCollision();
 
             if (colision)
@@ -143,7 +144,7 @@ namespace PhysicalLayer
                 return;
             }
 
-            StringBuilder salida = new StringBuilder();
+            StringBuilder output = new StringBuilder();
 
             for (int i = 0; i < this.NumberOfPorts; i++)
             {
@@ -151,19 +152,19 @@ namespace PhysicalLayer
 
                 if (Ports[i].Inputs[(int)Bit.cero] || Ports[i].Inputs[(int)Bit.uno])
                 {
-                    salida.Append(string.Format("{0} {1} receive {2} \n", Config.CurrentTime, this.Name + $"_{i + 1}", (int)this.InputBit));
+                    output.Append(string.Format("{0} {1} receive {2} \n", Simulation.CurrentTime, this.Name + $"_{i + 1}", (int)this.InputBit));
                 }
                 else
                 {
-                    salida.Append(string.Format("{0} {1} send {2} \n", Config.CurrentTime, this.Name + $"_{i + 1}", (int)this.InputBit));
+                    output.Append(string.Format("{0} {1} send {2} \n", Simulation.CurrentTime, this.Name + $"_{i + 1}", (int)this.InputBit));
                 }
             }
 
-            while (salida.Length > 1 && salida[salida.Length - 1] == '\n')
-                salida.Remove(salida.Length - 1, 1);
+            while (output.Length > 1 && output[output.Length - 1] == '\n')
+                output.Remove(output.Length - 1, 1);
 
-            WriteOutput(salida.ToString());
-
+            System.Console.WriteLine(output);
+            WriteOutput(output.ToString());
 
             CleanInputParameters();
         }

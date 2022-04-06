@@ -1,4 +1,4 @@
-public enum TipodeInstruccion
+public enum InstructionType
     {
         create = 0,
         connect = 1, 

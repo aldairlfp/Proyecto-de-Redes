@@ -162,7 +162,6 @@ namespace PhysicalLayer
 
             bool thereWasACollision = TWCollision();
 
-
             if (OutputBit != Bit.none && thereWasACollision)
             {
                 WriteOutput(string.Format("{0} {1} send {2} collision", Simulation.CurrentTime, this.Name, (int)this.OutputBit));

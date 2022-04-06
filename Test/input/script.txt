@@ -1,0 +1,4 @@
+0 create host p
+1 create host c
+3 connect p_1 c_1
+10 send p_1 0101010111001100

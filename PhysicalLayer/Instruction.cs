@@ -7,7 +7,7 @@ namespace PhysicalLayer
 
         // String completo donde esta toda la informacion que
         // tiene la instruccion 
-        public string AllInstruccion { get; private set; }
+        public string AllInstruction { get; private set; }
 
         // Este es el constructor
         // aquí pone automáticamente en la variable time 
@@ -15,7 +15,7 @@ namespace PhysicalLayer
         // que le corresponde ejecutarse la instrucción 
         public Instruction(string instruction)
         {
-            AllInstruccion = instruction;
+            AllInstruction = instruction;
             uint.TryParse(instruction.Split(' ')[0], out time);
         }
 

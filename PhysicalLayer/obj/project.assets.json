@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/home/aldairlfp/.nuget/packages/": {}
+    "C:\\Users\\Aldair\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/run/media/aldairlfp/Data/School/Tercer Año/Redes/Proyecto de Redes/PhysicalLayer/PhysicalLayer.csproj",
+      "projectUniqueName": "D:\\School\\Tercer Año\\Redes\\Proyecto de Redes\\PhysicalLayer\\PhysicalLayer.csproj",
       "projectName": "PhysicalLayer",
-      "projectPath": "/run/media/aldairlfp/Data/School/Tercer Año/Redes/Proyecto de Redes/PhysicalLayer/PhysicalLayer.csproj",
-      "packagesPath": "/home/aldairlfp/.nuget/packages/",
-      "outputPath": "/run/media/aldairlfp/Data/School/Tercer Año/Redes/Proyecto de Redes/PhysicalLayer/obj/",
+      "projectPath": "D:\\School\\Tercer Año\\Redes\\Proyecto de Redes\\PhysicalLayer\\PhysicalLayer.csproj",
+      "packagesPath": "C:\\Users\\Aldair\\.nuget\\packages\\",
+      "outputPath": "D:\\School\\Tercer Año\\Redes\\Proyecto de Redes\\PhysicalLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/aldairlfp/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Aldair\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/aldairlfp/dotnet_6_and_5/sdk/6.0.100/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
