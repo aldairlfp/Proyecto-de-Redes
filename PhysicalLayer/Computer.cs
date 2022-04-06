@@ -43,7 +43,7 @@ namespace PhysicalLayer
         public void Update()
         {
             WaitingTimeSending = (uint)new Random().Next(5, 50);
-            Console.WriteLine($"{Name} going to wait {WaitingTimeSending} to send another data");
+            // Console.WriteLine($"{Name} going to wait {WaitingTimeSending} to send another data");
             SendingTime = 0;
         }
 

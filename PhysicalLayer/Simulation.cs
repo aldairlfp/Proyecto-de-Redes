@@ -66,7 +66,7 @@ namespace PhysicalLayer
                 //Dispositivos a los que esta conectado la Computadora
                 foreach (var item in Devices.Where(e => e is Computer))
                 {
-                    Computer? comp = item as Computer;
+                    Computer comp = item as Computer;
                     comp.SendInformationOtherComputer();
                 }
 
@@ -209,7 +209,7 @@ namespace PhysicalLayer
             }
             else
             {
-                throw new Exception("La Salida no existe , para borrar el contenido dentro del directorio");
+                Directory.CreateDirectory(output);
             }
 
         }
@@ -222,7 +222,7 @@ namespace PhysicalLayer
             Instructions = new Queue<Instruction>();
 
             var directory = Environment.CurrentDirectory;
-            var fileDirectory = Path.Join(directory, "input", "script.txt");
+            var fileDirectory = Path.Join(directory, "script.txt");
 
             if (File.Exists(fileDirectory))
             {
