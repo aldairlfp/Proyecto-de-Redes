@@ -67,7 +67,7 @@ namespace PhysicalLayer
                 foreach (var item in Devices.Where(e => e is Computer))
                 {
                     Computer? comp = item as Computer;
-                    comp.SendOutputBitToOtherComputer();
+                    comp.SendInformationOtherComputer();
                 }
 
                 //verifica las entrada por cada dispositivo y chequea su hubo 

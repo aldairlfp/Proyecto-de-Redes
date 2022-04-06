@@ -128,7 +128,6 @@ namespace PhysicalLayer
         // valores correspondientes 
         public virtual void ProcessOutputInput()
         {
-            System.Console.WriteLine("llegue");
             bool colision = TWCollision();
 
             if (colision)

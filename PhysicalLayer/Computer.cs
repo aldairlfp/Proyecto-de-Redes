@@ -137,15 +137,15 @@ namespace PhysicalLayer
 
                 foreach (var item in current.ConnectedPorts)
                 {
-                    Device disconnect = item.Host;
-                    if (mask[disconnect.Index]) continue;
+                    Device deviceConnected = item.Host;
+                    if (mask[deviceConnected.Index]) continue;
 
                     int PortByWhichItIsConnected = item.PortNumberConnectedTo;
 
-                    disconnect.RecieveABit(PortByWhichItIsConnected, OutputBit);
+                    deviceConnected.RecieveABit(PortByWhichItIsConnected, OutputBit);
 
-                    mask[disconnect.Index] = true;
-                    queue.Enqueue(disconnect);
+                    mask[deviceConnected.Index] = true;
+                    queue.Enqueue(deviceConnected);
                 }
             }
         }
