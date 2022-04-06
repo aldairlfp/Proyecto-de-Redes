@@ -1,17 +1,19 @@
-public class Cable
+namespace PhysicalLayer
+{
+    public class Cable
     {
-        public Cable(Device dev1, Device dev2)
-            {
-            device1 = dev1;
-            device2 = dev2; 
-            }
-
-        public Cable (): this(null , null )
-        {
-        }
-
         Device dev1;
         Device dev2;
+
+        public Cable(Device dev1, Device dev2)
+        {
+            this.dev1 = dev1;
+            this.dev2 = dev2;
+        }
+
+        public Cable() : this(null, null)
+        {
+        }
 
         Device Device1
         {
@@ -19,9 +21,10 @@ public class Cable
             set => this.dev1 = value;
         }
 
-        Dispositivo Device2
+        Device Device2
         {
             get => this.dev2;
             set => this.dev2 = value;
         }
     }
+}

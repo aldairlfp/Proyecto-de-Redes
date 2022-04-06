@@ -1,4 +1,6 @@
-public class Computer:Device
+namespace PhysicalLayer
+{
+    public class Computer : Device
     {
         /// <summary>
         /// Esto es una cola para almacenar los bits que quedan 
@@ -6,7 +8,7 @@ public class Computer:Device
         /// bit por enviar. 
         /// </summary>
         Queue<Bit> SendQueve;
-        
+
 
         /// <summary>
         /// Este es el tiempo que el bit que esta enviándose 
@@ -23,9 +25,9 @@ public class Computer:Device
         /// computadora sin enviar información producto de una 
         /// colisión que detecto anteriormente
         /// </summary>
-        uint WaitingTimeSending; 
+        uint WaitingTimeSending;
 
-        public Computer(string name ,int index) : base(name ,1, index)
+        public Computer(string name, int index) : base(name, 1, index)
         {
             SendingTime = 0;
             FirstTimeSending = 0;
@@ -40,18 +42,18 @@ public class Computer:Device
         /// </summary>
         public void Update()
         {
-            WaitingTimeSending = (uint)new Random().Next(5,50);
-            Console.WriteLine($"{name} going to wait {WaitingTimeSending} to send another data");
+            WaitingTimeSending = (uint)new Random().Next(5, 50);
+            Console.WriteLine($"{Name} going to wait {WaitingTimeSending} to send another data");
             SendingTime = 0;
         }
-        
-       
+
+
         /// <summary>
         /// Este método se llama cuando hubo una instrucción 
         /// send para el envío de un paquete de bits
         /// </summary>
         /// <param name="paquete"></param>
-        public void send(Bit [] package)
+        public void send(Bit[] package)
         {
             foreach (var item in package)
             {
@@ -68,11 +70,11 @@ public class Computer:Device
         /// <returns></returns>
         public bool SendInformationOtherComputer()
         {
-            if (ports[0] == null || !ports[0].IsConnectOtherDevice)
-                return false; 
+            if (Ports[0] == null || !Ports[0].IsConnected)
+                return false;
             UpdateOutBit();
-            SendOutBitInOtherComputer();
-            return true; 
+            SendOutputBitToOtherComputer();
+            return true;
         }
 
 
@@ -84,11 +86,11 @@ public class Computer:Device
         /// </summary>
         public void UpdateOutBit()
         {
-            if (ports[0] == null || !ports[0].IsConnectToOtherDevice)  return;
+            if (Ports[0] == null || !Ports[0].IsConnected) return;
 
             if (SendQueve.Count == 0)
             {
-                OutBit = Bit.none;
+                OutputBit = Bit.none;
             }
             else
             {
@@ -96,18 +98,18 @@ public class Computer:Device
                 if (WaitingTimeSending > 0)
                 {
                     WaitingTimeSending--;
-                    OutBit = Bit.none;
+                    OutputBit = Bit.none;
                     return;
                 }
 
-                OutBit = SendQueve.Peek();
+                OutputBit = SendQueve.Peek();
 
                 SendingTime++;
 
-                if (SendingTime >= Program.signal_time)
+                if (SendingTime >= Config.SignalTime)
                 {
                     SendingTime = 0;
-                    FirstTimeSending = Program.current_time;
+                    FirstTimeSending = Config.CurrentTime;
                     SendQueve.Dequeue();
                 }
             }
@@ -120,66 +122,65 @@ public class Computer:Device
         ///  que están conectadas a la que representa esta instancia, 
         ///  (aquí lo que se usa es un bfs para enviar el bit a cada computadora)
         /// </summary>
-        public void SendOutBitInOtherComputer()
+        public void SendOutputBitToOtherComputer()
         {
             Queue<Device> queue = new Queue<Device>();
-            bool[] mask = new bool[Program.Device.Count];
-            mask[index]= true; 
+            bool[] mask = new bool[Simulation.Devices.Count];
+            mask[Index] = true;
             queue.Enqueue(this);
 
-            Device current; 
+            Device current;
 
-            while(queue.Count>0)
+            while (queue.Count > 0)
             {
                 current = queue.Dequeue();
 
-                foreach (var item in current.ConnectPorts)
+                foreach (var item in current.ConnectedPorts)
                 {
-                    Device disconnect = item.ConnectDevice;
+                    Device disconnect = item.Host;
                     if (mask[disconnect.Index]) continue;
 
-                    int PortByWhichItIsConnected = item.NumberPortConnected;
-                   
-                    disconnect.ReceiveBit(PortByWhichItIsConnected, OutBit); 
-                    
+                    int PortByWhichItIsConnected = item.PortNumberConnectedTo;
+
+                    disconnect.RecieveABit(PortByWhichItIsConnected, OutputBit);
+
                     mask[disconnect.Index] = true;
-                    queue.Enqueue(disconnect); 
+                    queue.Enqueue(disconnect);
                 }
             }
         }
 
-        /// <summary>
-        /// Este método es llamado para una vez que se establecieron las
-        /// salidas y entradas de datos a esta computadora puedan ser 
-        /// procesados estos datos y determinar si hubo una colisión 
-        /// y escribir en la salida del dispositivo los datos 
-        /// de salida  correspondiente a esta computadora.
-        /// </summary>
-        public override void ProcessInformationInAndOut()
+        // Este método es llamado para una vez que se establecieron las
+        // salidas y entradas de datos a esta computadora puedan ser 
+        // procesados estos datos y determinar si hubo una colisión 
+        // y escribir en la salida del dispositivo los datos 
+        // de salida  correspondiente a esta computadora.
+        public override void ProcessOutputInput()
         {
-            if (ports[0] == null || !ports[0].IsConnectToOtherDevice)
+            if (Ports[0] == null || !Ports[0].IsConnected)
                 return;
 
-            bool thereWasACollision = ThereWasACollision();
+            bool thereWasACollision = TWCollision();
 
-            
-            if (OutBit != Bit.none && thereWasACollision)
+
+            if (OutputBit != Bit.none && thereWasACollision)
             {
-                WriteOut(string.Format("{0} {1} send {2} collision", Program.current_time, this.Name, (int)this.OutBit));
+                WriteOutput(string.Format("{0} {1} send {2} collision", Simulation.CurrentTime, this.Name, (int)this.OutputBit));
                 Update();
-                base.CleanEntranceParameters(); 
-                return; 
+                base.CleanInputParameters();
+                return;
             }
-            else if (this.OutBit != Bit.none)
+            else if (this.OutputBit != Bit.none)
             {
-                WriteOut(string.Format("{0} {1} send {2} Ok", Program.current_time, Name, (int)OutBit));
-            }
-            
-            if (this.InBit != Bit.none)
-            {
-                WriteOut(string.Format("{0} {1} receive {2} Ok", Program.current_time, Name, (int)InBit));
+                WriteOutput(string.Format("{0} {1} send {2} Ok", Simulation.CurrentTime, Name, (int)OutputBit));
             }
 
-            base.CleanEntranceParameters();
+            if (this.InputBit != Bit.none)
+            {
+                WriteOutput(string.Format("{0} {1} receive {2} Ok", Simulation.CurrentTime, Name, (int)InputBit));
+            }
+
+            base.CleanInputParameters();
         }
     }
+}

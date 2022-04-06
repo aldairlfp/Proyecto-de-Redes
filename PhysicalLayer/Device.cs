@@ -6,25 +6,25 @@ namespace PhysicalLayer
     {
         // Representar los puertos que 
         // que tiene el dispositivo.
-        protected Port[] Ports { get; private set; }
+        public Port[] Ports { get; private set; }
 
         // Nombre que tiene el dispositivo
-        protected string Name { get; private set; }
+        public string Name { get; private set; }
 
         // Representa el bit de salida del dispositivo 
         // inicialmente este es None
-        protected Bit OutBit { get; set; }
+        public Bit OutputBit { get; set; }
 
         // Representa el bit de entrada del dispositivo
         // inicialmente este es None
-        protected Bit InputBit { get; private set; }
+        public Bit InputBit { get; private set; }
 
         // Este es para saber en el montículo del programa inicial donde 
         // se almacenan los dispositivos, que indice tiene el en ese array 
-        protected int Index { get; private set; }
+        public int Index { get; private set; }
 
         // Esto es para representar la cantidad de puertos que tiene el dispositivo
-        protected int NumberOfPorts { get; private set; }
+        public int NumberOfPorts { get; private set; }
 
         // Constructor de un dispositivo en general 
         // Como es obvio todo dispositivo tiene un nombre , un indice 
@@ -32,7 +32,7 @@ namespace PhysicalLayer
         public Device(string name, int numberOfPorts, int index)
         {
             Name = name;
-            OutBit = Bit.none;
+            OutputBit = Bit.none;
             InputBit = Bit.none;
             Index = index;
             NumberOfPorts = numberOfPorts;
@@ -57,7 +57,7 @@ namespace PhysicalLayer
 
         // Esto retorna todos los puertos (en orden ) que 
         // tienen conectado algún dispositivo
-        public IEnumerable<Port> PuertosConectados
+        public IEnumerable<Port> ConnectedPorts
         {
             get
             {
@@ -73,7 +73,7 @@ namespace PhysicalLayer
         // por esta clase , (nombredeldispositivo .txt)
         public void WriteOutput(string receive)
         {
-            string completeRoute = Path.Join(OutputDirectory(), Name + ".txt");
+            string completeRoute = Path.Join(OutputDirectory, Name + ".txt");
 
             //se crea el archivo si no existe y lo abre si ya existe 
             using (StreamWriter mylogs = File.AppendText(completeRoute))
@@ -85,11 +85,14 @@ namespace PhysicalLayer
 
         // Retorna el path del directorio de salida donde se va a escribir 
         // donde se van a crear los ficheros para escribir la salidas correspondientes
-        string OutputDirectory()
+        string OutputDirectory
         {
-            var currentDirectory = Environment.CurrentDirectory;
-            var parent = Directory.GetParent(Directory.GetParent(Directory.GetParent(currentDirectory).FullName).FullName);
-            return Path.Join(parent.FullName, "output");
+            get
+            {
+                var currentDirectory = Environment.CurrentDirectory;
+                var parent = Directory.GetParent(Directory.GetParent(Directory.GetParent(currentDirectory).FullName).FullName);
+                return Path.Join(parent.FullName, "output");
+            }
         }
 
         // Escribe el bit que se pasa por el parámetro Bit 
@@ -102,12 +105,12 @@ namespace PhysicalLayer
         // Detecta si en los bits de entradas hubo mas de 
         // un bit que fue recibido , es decir se recibieron 
         // bit diferentes de algunas computadoras
-        public bool TWColision()
+        public bool TWCollision()
         {
             InputBit = Bit.none;
             bool cero = false, uno = false;
 
-            foreach (var item in this.PuertosConectados)
+            foreach (var item in this.ConnectedPorts)
             {
                 if (item.Inputs[(int)Bit.cero]) cero = true;
                 if (item.Inputs[(int)Bit.uno]) uno = true;
@@ -118,7 +121,7 @@ namespace PhysicalLayer
             else if (uno) InputBit = Bit.uno;
             else if (cero) InputBit = Bit.cero;
 
-            if (this is Computadora && InputBit != Bit.none && InputBit != OutBit) return true;
+            if (this is Computer && InputBit != Bit.none && InputBit != OutputBit) return true;
             else return false;
         }
 
@@ -126,7 +129,7 @@ namespace PhysicalLayer
         // valores correspondientes 
         public virtual void ProcessOutputInput()
         {
-            bool colision = TWColision();
+            bool colision = TWCollision();
 
             if (colision)
             {
@@ -148,21 +151,21 @@ namespace PhysicalLayer
 
                 if (Ports[i].Inputs[(int)Bit.cero] || Ports[i].Inputs[(int)Bit.uno])
                 {
-                    salida.Append(string.Format("{0} {1} receive {2} \n", Program.current_time, this.Name + $"_{i + 1}", (int)this.bitentrada));
+                    salida.Append(string.Format("{0} {1} receive {2} \n", Config.CurrentTime, this.Name + $"_{i + 1}", (int)this.InputBit));
                 }
                 else
                 {
-                    salida.Append(string.Format("{0} {1} send {2} \n", Program.current_time, this.Name + $"_{i + 1}", (int)this.bitentrada));
+                    salida.Append(string.Format("{0} {1} send {2} \n", Config.CurrentTime, this.Name + $"_{i + 1}", (int)this.InputBit));
                 }
             }
 
             while (salida.Length > 1 && salida[salida.Length - 1] == '\n')
                 salida.Remove(salida.Length - 1, 1);
 
-            EscribirEnLaSalida(salida.ToString());
+            WriteOutput(salida.ToString());
 
 
-            LimpiarLosParametrosDeEntrada();
+            CleanInputParameters();
         }
 
 
@@ -173,29 +176,29 @@ namespace PhysicalLayer
         protected void CleanInputParameters()
         {
 
-            foreach (var item in this.PuertosConectados)
+            foreach (var item in this.ConnectedPorts)
             {
-                item.LimpiarEntradas();
+                item.CleanInputs();
             }
 
-            this.BitdeEntrada = Bit.none;
+            this.InputBit = Bit.none;
         }
 
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();
 
-            stringBuilder.Append($"{this.name} \n");
+            stringBuilder.Append($"{this.Name} \n");
 
-            stringBuilder.Append($"Bit de Salida:\t {(int)this.BitdeSalida}\n");
+            stringBuilder.Append($"Bit de Salida:\t {(int)this.OutputBit}\n");
 
             stringBuilder.Append($"Bit de Entradas:\n");
 
-            foreach (var item in this.PuertosConectados)
+            foreach (var item in this.ConnectedPorts)
             {
-                for (int j = 0; j < item.Entradas.Length; j++)
+                for (int j = 0; j < item.Inputs.Length; j++)
                 {
-                    stringBuilder.Append($"{ (item.Entradas[j] == true ? "T" : "F")}  ");
+                    stringBuilder.Append($"{ (item.Inputs[j] == true ? "T" : "F")}  ");
                 }
                 stringBuilder.Append(Environment.NewLine);
             }

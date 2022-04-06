@@ -1,6 +1,6 @@
 namespace PhysicalLayer
 {
-    class Instruction
+    public class Instruction
     {
         // Tiempo en el que le toca ejecutarse la instrucion 
         uint time;
