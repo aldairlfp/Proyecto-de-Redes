@@ -73,7 +73,6 @@ namespace PhysicalLayer
         // por esta clase , (nombredeldispositivo .txt)
         public void WriteOutput(string receive)
         {
-            System.Console.WriteLine("Llegue");
             string completeRoute = Path.Join(OutputDirectory, Name + ".txt");
             System.Console.WriteLine(completeRoute);
             //se crea el archivo si no existe y lo abre si ya existe 
@@ -129,7 +128,6 @@ namespace PhysicalLayer
         // valores correspondientes 
         public virtual void ProcessOutputInput()
         {
-            System.Console.WriteLine("llegue");
             bool colision = TWCollision();
 
             if (colision)
